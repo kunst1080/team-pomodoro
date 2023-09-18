@@ -1,27 +1,15 @@
-import { useState } from 'react'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ClockComonent from './ClockComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+      <a href="https://vitejs.dev" target="_blank">
+        <img src={viteLogo} className="logo" alt="Vite logo" />
+      </a>
       <h1>Team Pomodoro</h1>
-      <div className="card">
-        99:99
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          start
-        </button>
-        <button onClick={() => setCount((count) => count + 1)}>
-          pause
-        </button>
-        <button onClick={() => setCount((count) => count + 1)}>
-          stop
-        </button>
-      </div>
+      <ClockComonent />
       <p className="description">
         hogehoge
       </p>
