@@ -5,9 +5,13 @@ export function now(): number {
 export function formatTime(time: number): string {
     const dt = new Date(time)
     if (time > 3600000) {
-        return `${dt.getHours()}:${dt.getMinutes()}:${dt.getSeconds()}`
+        return `${padZero(dt.getHours(), 2)}:${padZero(dt.getMinutes(), 2)}:${padZero(dt.getSeconds(), 2)}`
     } else {
-        return `${dt.getMinutes()}:${dt.getSeconds()}`
+        return `${padZero(dt.getMinutes(), 2)}:${padZero(dt.getSeconds(), 2)}`
     }
 
+}
+
+function padZero(v: any, length: number): string {
+    return v.toString().padStart(length, '0')
 }
