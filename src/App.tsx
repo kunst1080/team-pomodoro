@@ -10,9 +10,7 @@ function App() {
       </a>
       <h1>Team Pomodoro</h1>
       <ClockComonent sessionMinutes={30} />
-      <p className="description">
-        hogehoge
-      </p>
+      <p className="description">hogehoge</p>
     </>
   )
 }
