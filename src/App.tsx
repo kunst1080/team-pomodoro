@@ -9,7 +9,7 @@ function App() {
         <img src={viteLogo} className="logo" alt="Vite logo" />
       </a>
       <h1>Team Pomodoro</h1>
-      <ClockComonent />
+      <ClockComonent sessionMinutes={30} />
       <p className="description">
         hogehoge
       </p>
