@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatTime, now } from './common'
+import { formatTime, now } from '../common'
 
 type Props = {
   sessionTime: number

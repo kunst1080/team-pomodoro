@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import DialComponent from './DialComponent'
-import { formatTime, now } from './common'
+import { formatTime, now } from '../common'
 
 type STATE = 'STOP' | 'PROCESSING' | 'PAUSE'
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useConfig } from './ConfigContextProvider'
+import { useConfig } from '../ConfigContextProvider'
 
-function ConfigComponent() {
+function SettingPage() {
   const c = useConfig()
   const [workTime, setWorkTime] = useState(c.workMinutes)
   const [shortBreakTime, setShortBreakTime] = useState(c.shortBreakMinutes)
@@ -70,4 +70,4 @@ function ConfigComponent() {
   )
 }
 
-export default ConfigComponent
+export default SettingPage
