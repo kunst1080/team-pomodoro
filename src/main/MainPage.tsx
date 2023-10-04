@@ -3,7 +3,9 @@ import ClockComonent from './ClockComponent'
 import { useConfig } from '../ConfigContextProvider'
 
 function MainPage() {
-  const config = useConfig()
+  const { config } = useConfig()
+
+  console.log('render: MainPage')
   return (
     <>
       <a href="https://vitejs.dev" target="_blank">

@@ -1,7 +1,12 @@
-import { ReactNode, createContext, useContext } from 'react'
+import { ReactNode, createContext, useContext, useState } from 'react'
 import Config from './Config'
 
-const defaultValue: Config = {
+type ConfigState = {
+  config: Config
+  updateConfig: (config: Config) => void
+}
+
+const defaultConfig: Config = {
   workMinutes: 30,
   shortBreakMinutes: 5,
   longBreakMinutes: 10,
@@ -10,16 +15,26 @@ const defaultValue: Config = {
   autoStartBreak: true,
 }
 
-const ConfigContext = createContext<Config>(defaultValue)
+const defaultState: ConfigState = {
+  config: defaultConfig,
+  updateConfig: (_: Config) => _,
+}
+
+const ConfigContext = createContext<ConfigState>(defaultState)
 
 export function ConfigContextProvider({ children }: { children: ReactNode }) {
+  console.log('ConfigContextProvider')
+  const [config, setConfig] = useState(defaultConfig)
+  const updateConfig = (c: Config) => {
+    setConfig(c)
+  }
   return (
-    <ConfigContext.Provider value={defaultValue}>
+    <ConfigContext.Provider value={{ config, updateConfig }}>
       {children}
     </ConfigContext.Provider>
   )
 }
 
-export function useConfig() {
+export function useConfig(): ConfigState {
   return useContext(ConfigContext)
 }
