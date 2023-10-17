@@ -1,6 +1,6 @@
 import { useConfig } from '../ConfigContextProvider'
 
-function SettingPage() {
+export function SettingPage() {
   const { config, updateConfig } = useConfig()
 
   console.log('render: SettingPage')
@@ -88,5 +88,3 @@ function SettingPage() {
     </>
   )
 }
-
-export default SettingPage

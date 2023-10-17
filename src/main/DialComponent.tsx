@@ -7,7 +7,7 @@ type Props = {
   stopTime: number
 }
 
-function DialComponent(props: Props) {
+export function DialComponent(props: Props) {
   const [currentTime, setCurrentTime] = useState(now())
 
   const timeLabel = formatTime(
@@ -20,5 +20,3 @@ function DialComponent(props: Props) {
   console.log('render: DialComponent')
   return <div>{timeLabel}</div>
 }
-
-export default DialComponent

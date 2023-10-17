@@ -1,8 +1,8 @@
 import viteLogo from '/vite.svg'
-import ClockComonent from './ClockComponent'
+import { ClockComonent } from './ClockComponent'
 import { useConfig } from '../ConfigContextProvider'
 
-function MainPage() {
+export function MainPage() {
   const { config } = useConfig()
 
   console.log('render: MainPage')
@@ -17,5 +17,3 @@ function MainPage() {
     </>
   )
 }
-
-export default MainPage

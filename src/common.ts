@@ -14,6 +14,6 @@ export function formatTime(time: number): string {
   }
 }
 
-function padZero(v: any, length: number): string {
+function padZero(v: number, length: number): string {
   return v.toString().padStart(length, '0')
 }

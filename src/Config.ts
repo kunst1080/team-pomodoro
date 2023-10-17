@@ -1,4 +1,4 @@
-type Config = {
+export type Config = {
   workMinutes: number
   shortBreakMinutes: number
   longBreakMinutes: number
@@ -6,5 +6,3 @@ type Config = {
   autoStartWork: boolean
   autoStartBreak: boolean
 }
-
-export default Config

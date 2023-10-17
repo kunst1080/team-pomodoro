@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import DialComponent from './DialComponent'
+import { DialComponent } from './DialComponent'
 import { formatTime, now } from '../common'
 
 type STATE = 'STOP' | 'PROCESSING' | 'PAUSE'
@@ -8,7 +8,7 @@ type Props = {
   sessionMinutes: number
 }
 
-function ClockComonent(props: Props) {
+export function ClockComonent(props: Props) {
   const [startTime, setStartTime] = useState(0)
   const [stopTime, setStopTime] = useState(0)
   const [state, setState] = useState<STATE>('STOP')
@@ -85,5 +85,3 @@ function ClockComonent(props: Props) {
     </>
   )
 }
-
-export default ClockComonent
