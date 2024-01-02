@@ -1,13 +1,16 @@
 import './App.css'
 import { ConfigContextProvider } from './ConfigContextProvider'
+import { PhaseContextProvider } from './PhaseContextProvider'
 import { MainPage } from './main/MainPage'
 import { SettingPage } from './setting/SettingPage'
 
 function App() {
   return (
     <ConfigContextProvider>
-      <MainPage />
-      <SettingPage />
+      <PhaseContextProvider>
+        <MainPage />
+        <SettingPage />
+      </PhaseContextProvider>
     </ConfigContextProvider>
   )
 }

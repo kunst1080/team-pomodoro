@@ -5,18 +5,23 @@ type Props = {
   sessionTime: number
   startTime: number
   stopTime: number
+  onFinished: () => void
 }
 
 export function DialComponent(props: Props) {
   const [currentTime, setCurrentTime] = useState(now())
 
-  const timeLabel = formatTime(
-    props.sessionTime - (currentTime - props.startTime)
-  )
+  const t = props.sessionTime - (currentTime - props.startTime)
+  if (t <= 0) {
+    props.onFinished()
+    return <>00:00</>
+  }
+
+  const timeLabel = formatTime(t)
   setTimeout(() => {
-    console.log('setTimeout')
+    console.debug('setTimeout')
     setCurrentTime(now())
   }, 1000)
-  console.log('render: DialComponent')
-  return <div>{timeLabel}</div>
+  console.debug('render: DialComponent')
+  return <>{timeLabel}</>
 }

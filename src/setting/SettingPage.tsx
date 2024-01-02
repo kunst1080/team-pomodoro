@@ -3,7 +3,7 @@ import { useConfig } from '../ConfigContextProvider'
 export function SettingPage() {
   const { config, updateConfig } = useConfig()
 
-  console.log('render: SettingPage')
+  console.debug('render: SettingPage')
   return (
     <>
       <div>
